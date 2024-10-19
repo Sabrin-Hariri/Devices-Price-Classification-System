@@ -1,50 +1,59 @@
-# Devices-Price-Classification-System
+# Devices Price Classification System
 
-Project Phases:
-Adding All Necessary Libraries: Begin by adding all the required libraries for the project, such as pandas, numpy, sklearn, and flask. These libraries provide the essential tools for data analysis and model building.
+## Project Overview
+The **Devices Price Classification System** is a machine learning project aimed at predicting the price category of electronic devices based on their specifications. The project utilizes algorithms such as SVM, KNN, and Random Forest to make predictions and integrates with both Flask and Spring Boot for a full-stack solution. 
 
-Loading the Data: Training and Test Data: Load both datasets—one for training and another for testing. The training data is used to train the model, while the test data is used to evaluate its performance.
+### Project Phases:
 
-Data Cleaning: We need to handle any missing values in the training data and ensure all data types are correct (such as integers, floats, etc.). This ensures the input data is of high quality for the model.
+1. **Adding All Necessary Libraries**  
+   Add required libraries such as `pandas`, `numpy`, `sklearn`, and `flask`. These libraries provide essential tools for data processing and model training.
 
-Splitting the Training Data into Training and Evaluation Sets: The training data is split into two sets: one for training the model and another for evaluating its performance. This prevents overfitting.
+2. **Loading the Data**  
+   Load both the training and test datasets. The training dataset is used for building the model, while the test dataset evaluates its performance.
 
-Choosing the Algorithms: Since the dataset is relatively small and contains multiple classes (0-1-2-3), I chose several algorithms that I believe will perform best:
+3. **Data Cleaning**  
+   Handle missing values in the training data and ensure that all data types are correct (e.g., integers, floats). This ensures the input data is of high quality before passing it to the model.
 
-a. SVM (Support Vector Machine) Algorithm
-b. KNN (K-Nearest Neighbors) Algorithm
-c. Random Forest Classifier Algorithm
-Training and Testing the Data: We train the model using the training set and then test it with the evaluation set to measure its performance.
+4. **Splitting the Data**  
+   Split the training data into two sets: one for training and the other for evaluation, to avoid overfitting.
 
-Selecting the Best Algorithm: After running the tests, the SVM algorithm proved to be the most suitable among the chosen options.
+5. **Choosing the Algorithms**  
+   The dataset contains multiple classes (0-1-2-3) and is relatively small. Thus, the following algorithms were chosen:
+   - **SVM (Support Vector Machine)**
+   - **KNN (K-Nearest Neighbors)**
+   - **Random Forest Classifier**
 
-Loading the Model and Testing it on Test Data: After training, we save the model and then test it on the test dataset to verify its prediction accuracy.
+6. **Training and Testing the Data**  
+   Train the model on the training data, and test it with the evaluation data to assess performance.
 
-Connecting with Flask: We integrate the model with a Flask application, which allows us to create an interface for providing predictions online. (I've already done this part, and I'll connect it with Spring Boot.)
+7. **Selecting the Best Algorithm**  
+   After testing, **SVM** proved to be the most suitable algorithm for this classification task.
 
-Building the Spring Boot Project and Connecting it to the Database: Create a Spring Boot project that manages the project's database, and I've chosen 2H Database for its speed and efficiency.
+8. **Loading the Model and Testing it on Test Data**  
+   Save the trained model and test it on the test dataset to verify its prediction accuracy.
 
-Connecting Flask with Spring Boot: We link Flask to Spring Boot, enabling seamless communication between the frontend and backend.
+9. **Connecting with Flask**  
+   Integrate the trained model into a Flask application, allowing us to create an interface for providing predictions via a web service.
 
-Building Classes and APIs: We develop the necessary classes and APIs to facilitate data exchange between the various project components.
+10. **Building the Spring Boot Project and Connecting to the Database**  
+    Create a Spring Boot project that manages the database and connects with Flask for model predictions. **2H Database** is used for its efficiency and speed.
 
-Testing the APIs:
+11. **Connecting Flask with Spring Boot**  
+    Connect Flask to Spring Boot to enable communication between the backend (Flask and machine learning model) and frontend (Spring Boot and APIs).
 
-POST: http://localhost:5000/prediction: Add a new device and predict its price.
-GET: http://localhost:8080/api/devices: Get all devices.
-GET: http://localhost:8080/api/devices/{id}: Get a device by its ID.
-POST: http://localhost:8080/api/devices/predict/{id}: Predict the price of a device by its ID.
-How to Run the Project:
-Run Flask First:
+12. **Building Classes and APIs**  
+    Develop the necessary classes and APIs to facilitate data exchange between various project components.
 
-bash
-Copy code
+13. **Testing the APIs**  
+    The following RESTful endpoints are provided for interaction:
+    - **POST**: `http://localhost:5000/prediction` – Add a new device and predict its price.
+    - **GET**: `http://localhost:8080/api/devices` – Retrieve all devices.
+    - **GET**: `http://localhost:8080/api/devices/{id}` – Retrieve a device by its ID.
+    - **POST**: `http://localhost:8080/api/devices/predict/{id}` – Predict the price of a device by its ID.
+
+## How to Run the Project
+
+### 1. Run Flask First:
+```bash
 cd python-flask
 python app.py
-Run Spring Boot:
-
-bash
-Copy code
-cd devices-price-Mclassification
-mvn spring-boot:run
-Configure the Database: Adjust the database settings in the application.properties file.
