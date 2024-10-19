@@ -57,9 +57,9 @@ The **Devices Price Classification System** is a machine learning project aimed 
 ```bash
 cd python-flask
 python app.py
-```bash
- 
+```
 ### 2. Run Spring Boot:
+```bash
 cd devices-price-Mclassification
 mvn spring-boot:run
-
+```
